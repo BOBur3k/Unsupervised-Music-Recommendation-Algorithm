@@ -1,4 +1,4 @@
-# Unsupervised Music Recommendation Algorithm
+# Music Recommendation Algorithm
 ![Dalle3_ART](docs/dalle3.png)
 <p align="right">
   Artwork created by Dalle 3 AI
