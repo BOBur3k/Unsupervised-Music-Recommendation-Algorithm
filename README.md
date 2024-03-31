@@ -5,7 +5,7 @@
 </p>
 
 ## Project Overview
-This project focuses on the development of an audio recommendation algorithm using unsupervised learning techniques. The dataset comprises songs spanning from 1950 to 2019, featuring various lyrical features and metadata. The goal is to create a machine learning pipeline that clusters songs based on their lyrical content and other features, allowing for personalized song recommendations.
+This project focuses on the development of an audio recommendation algorithm using unsupervised learning model called K-means. The dataset comprises songs spanning from 1950 to 2019, featuring various lyrical features and metadata. The goal is to create a machine learning pipeline that clusters songs based on their lyrical content and other features, allowing for personalized song recommendations.
 
 The project is structured into the following phases:
 
