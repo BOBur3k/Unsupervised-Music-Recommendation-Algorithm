@@ -4,9 +4,9 @@
   Artwork created by Dalle 3 AI
 </p>
 
-This project involves the analysis of music genres and themes using machine learning techniques. The project is divided into four phases: Exploratory Data Analysis (EDA), Data Cleaning, Data Modeling, and Reporting.
-
 ## Project Overview
+This project focuses on the development of an audio recommendation algorithm using unsupervised learning techniques. The dataset comprises songs spanning from 1950 to 2019, featuring various lyrical features and metadata. The goal is to create a machine learning pipeline that clusters songs based on their lyrical content and other features, allowing for personalized song recommendations.
+
 The project is structured into the following phases:
 
 ### 1. Exploratory Data Analysis (EDA):
@@ -17,19 +17,22 @@ The project is structured into the following phases:
 - Visualized distributions of song lengths, genres, and themes.
 
 #### Insights from EDA:
-- Observed a rise in the combination of hip-hop and obscenity in music starting from the early 2010s.
 - Found that out of 5424 artists, only 3308 have more than one song in the training dataset.
+![Total Number of Artists', 'Artists of more than 1 song](docs/EDA1.png)
 - Discovered that the top 10 artists in the dataset are not primarily hip-hop, reggae, or pop artists.
 
-#### Graphs to Include:
-- Histogram of song release years.
-- Bar plot of song counts by genre.
-- Bar plot of song counts by theme.
-- Bar plot of song lengths by genre.
+
+- Bar plot of song counts by genre, shows that the POP genre is the most popular one among every decade represented in our dataset
+
+  ![Bar plot of song counts by genre.](docs/EDA3.png)
+
+- Bar plot of song counts by theme, shows that the violence and obsenity is the dominant theme of the songs since 2010s 
+
+  ![Bar plot of song counts by theme.](docs/EDA4.png)
 
 ### 2. Data Cleaning:
 
-- Prepared the data for K-Mean Classification Model.
+- Prepared the TEST and TRAIN data for K-Mean Classification Model.
 - Dropped irrelevant and strongly correlated columns indentified by use of HEATMAPs.
 - Manipulate the dataframes to extract identifiers and features to meet the requirements for classification model.
 
@@ -48,25 +51,16 @@ The project is structured into the following phases:
 - Provided human-interpretable descriptions of the clusters.
 - Presented a recommendation tool for users based on their song preferences.
 
-## Code Details
-The script employs `if`, `else`, and `elif` functions for handling user choices. The `if` statement checks whether the user wants to encrypt or decrypt the message. If encrypting, it enters the corresponding line of code; if decrypting, it enters another line of code. The `elif` function is used for additional conditions. Additionally, basic `for` loops are used for both encryption and decryption processes. These loops iterate through each character in the input message, applying the Caesar Cipher algorithm. The `ord` function is used to convert characters to their corresponding ASCII values, and the `chr` function is used to convert ASCII values back to characters. The `''.join` function is also utilized to concatenate the characters back into a string, providing a more readable format for the final result. To make sure that code can handle big numbers for a key variable, the encoding and decoding code includes functions like `(ord(z)- 32 + key) % 95 + 32` for encoding and `(ord(z)- 32 - key) % 95 + 32` for decoding. Dividing by `95` ensure that our `ord` value will not overflow the limits of ASCII model and adding and subtracting `32` ensure the set limits.  
+### Recomentation Tool: 
 
-## Limitations
-- The encoded message appearance can vary based on the chosen key, potentially resulting in non-alphabetic characters.
-- A temporary fix is implemented by instructing users to copy and paste the encoded message for future decryption.
-- Considerations for improving the user experience, such as finding alternatives to manual copying and pasting, are mentioned.
+At the end of the phase 3 and on the phase 4, I introduce the simple python script that use findings of our K-means model to recomend songs to users who will select a prefered song from the list of our songs in our TRAIN dataset. This tool use a simple python commands like if and elif. 
 
-## Future Steps
-- Explore solutions to make the encoding and decoding process more user-friendly without manual copying.
-- Consider adapting the code for use in a Telegram bot to provide a more streamlined and accessible experience.
+## Future Steps:
 
-## How to Use
-1. Run the script in a Python environment.
-```bash
-python caesar_cipher.py
-```
-2. Choose whether to encrypt or decrypt a message by entering 'E' or 'D' respectively.
-3. If encrypting, enter the message to be encoded and a key for encryption.
-4. If decrypting, enter the message to be decoded and the encryption key used.
-5. Copy and save the resulting encrypted or decrypted message.
-6. The program prompts whether you want to use the Caesar Cipher tool again. Respond with 'Y' to continue, or 'N' to exit.
+- **Enhance Model Performance**: Experiment with different clustering algorithms and hyperparameters to improve the accuracy and robustness of the recommendation algorithm.
+
+- **Lyrical Analysis**: Optionally, conduct a sentiment analysis on the song lyrics using techniques like Word2Vec to extract deeper insights into the emotional content of the songs.
+
+- **Improving Recommendation Tool**:  Enhance the recommendation tool by exploring alternative ways to provide the end user with the song recomentdations based on their favorite song (using the clusters created by our K-Means model)
+
+- **Deployment on AWS and Telegram**: Explore hosting the recommendation system on Amazon Web Services (AWS) for scalability and reliability. Additionally develop a Telegram bot interface for users to interact with the recommendation system seamlessly.
